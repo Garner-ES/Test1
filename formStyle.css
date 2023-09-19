@@ -10,7 +10,53 @@ ul {
     list-style-type: none;
 }
 
-/**** HEADER ****/
+/****************
+      Login
+*****************/
+
+      .loginMobal{
+        border-radius: 10px;
+        border: solid 2px black;
+        padding: 30px;
+        background-color: wheat;
+        display: block;
+        margin: auto;
+        width: fit-content;
+        box-shadow: 5px 5px 5px rgb(52, 3, 3);
+      }
+
+      .input-field-login{
+        text-align: center;
+        border-radius: 100px;
+        border:  solid rgba(0, 0, 0, .3);
+        padding: 3px;
+        font-weight: bold;
+        width: 200px;
+      }
+
+
+      .loginButton{
+        display: block;
+        margin-left: auto;
+        margin-right:auto;
+        border-radius: 7px;
+        border-bottom: solid 2px #333;
+        background-color: #C53B33; /*Garner Red*/
+        color: white;
+        width: fit-content;
+        padding: 20px;
+        transition: color .4s;
+      }
+
+      .loginButton:hover{
+        color:#ecec22;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+/********************
+       HEADER 
+*********************/
 
         .pageHeaderContainer{
           background-color: black;
@@ -29,7 +75,9 @@ ul {
           background-blend-mode: a;
         }
 
-/**** NAVIGATION MENU ****/
+/*************************
+      NAVIGATION MENU 
+**************************/
 
 
         /* Style the navigation menu */
