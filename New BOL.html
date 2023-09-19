@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Garner Mission Vetting" content="Get missions ready to be received by LSA and delivery drivers.">
+  <meta name="Author:" content="Phillip Ross"> 
+
+    <title>New BOL form</title>
+
+<!--------------------
+    Links and Scripts
+--------------------->
+
+    <link rel="stylesheet" type="text/css" href="formStyle.css">
+    <script src="mainJS.js" type="text/javascript" defer></script>
+</head>
+
+
+<body class="formBackground">
+
+<div class="pageHeaderContainer">
+    <div class="pageHeader">
+
+        <img src="Images/Garner-logo-2019.png" id="headerImage" class="headerImage">
+
+    </div>
+</div>
+<!--------------------
+    Menu Navigation
+--------------------->
+
+</div>
+    <div id="navigationMenu" class="nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">LSA</a>
+                <ul>
+                    <li><a href="LSA Ops.html">LSA OPS</a></li>
+                    <li><a href="#">New BOL</a></li>
+                    <li><a href="#">Equipment</a></li>
+                    <li><a href="#">Fueling</a></li>
+                    <li><a href="#">Maintenance</a></li>
+                    <li><a href="#">Personnel</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Mission Control</a>
+                <ul>
+                    <li><a href="#">Mission Dashboard</a></li>
+                    <li><a href="Mission Vetting.html">Mission Vetting</a></li>
+                    <li><a href="#">Personnel</a></li>
+                    <li><a href="#">About Us</a></li>           
+                </ul>  
+            <li>
+                <a href="#">Intake</a>
+                <ul>
+                    <li><a href="#">Equipment</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </li>                
+            </li>              
+            <li><a href="#">Finance</a></li>
+            <li><a href="#">Training</a></li>            
+        </ul>
+    </div>
+
+<!--------------------
+       BOL Form
+--------------------->
+
+    <h1 class="formHeading">New BOL</h1>
+    <form action="process_delivery.php" method="POST">
+
+<!-- Delivery Info -->
+        <fieldset>
+            <legend>Mission Information</legend>
+
+            <label for="mission_number">Mission Number:</label>
+            <input type="text" placeholder ="include zeros e.g., 00121" id="mission_number" name="mission_number" required class="input-field-unfilled">
+            <br><br>
+           
+            <label for="delivery_type">Delivery Type:</label>
+            <select id="delivery_type" name="delivery_type" required class="input-field-unfilled">
+                <option value="" disabled selected hidden>Make Selection</option>
+                <option value="deliver_to_customer">Deliver to Customer</option>
+                <option value="pickup_from_customer">Pickup From Customer</option>
+                <option value="swap_equipment">Swap Equipment Already On Scene</option>
+            </select>
+            <br><br>
+
+            <label for="bol_by">BOL Created By:</label>
+            <input type="text" placeholder="me@my.mail" id="bol_by" name="bol_by" required class="input-field-unfilled">
+            <br><br>           
+        </fieldset>
+
+<!-- Delivery Equipment Information -->
+        <fieldset>
+            <legend>Delivery Truck Information</legend>
+
+            <label for="equipment_required">Truck Number:</label>
+            <select id="equipment_required" name="equipment_required" required class="input-field-unfilled">
+                <option value="" disabled selected hidden>Make Selection</option>
+                <option value="TRK001">TRK001</option>
+                <option value="TRK002">TRK002</option>      
+                <option value="TRK003">TRK003</option>
+                <option value="TRK004">TRK004</option>
+            </select>
+            <br><br>
+
+            <label for="driver_name">Driver Name:</label>
+            <input type="text" id="driver_name" name="driver_name" required class="input-field-unfilled">
+            <br><br>
+
+            <label for="poc_title">Company:</label>
+            <select id="driving_company" name="driving_company" required class="driving_company">
+                <option value="" disabled selected hidden>Make Selection</option>
+                <option value="prince's_towing">Prince's Towing</option>
+                <option value="gas_automotive">Gas Automotive</option>      
+                <option value="other">Other</option>
+            </select>
+            <br><br>
+
+            <label for="driver_phone">Driver Phone:</label>
+            <!--Validate with regex-->
+            <input type="text" placeholder="(###) ###-####" title="please enter a valid phone number" id="driver_phone" name="driver_phone" required class="input-field-unfilled">
+            <br><br>                       
+        </fieldset>
+
+        <fieldset>
+            <legend>Delivery Equipment Information</legend>
+
+            <p> Please only list equipment that will be loaded onto THIS truck.</p>
+            <br>
+
+            <label for="loaded_equipment_id1">Equipment 1 ID :</label>
+            <select id="loaded_equipment_id1" name="loaded_equipment_id1" required class="input-field-unfilled">
+                <option value="" disabled selected hidden>Make Selection</option>
+                <option value="TRK001">GEN001</option>
+                <option value="TRK002">GEN002</option>      
+                <option value="TRK003">AC003</option>
+                <option value="TRK004">FL004</option>
+            </select>
+            <br><br>
+
+            <label for="loaded_equipment_id2">Equipment 2 ID :</label>
+            <select id="loaded_equipment_id2" name="loaded_equipment_id2" required class="input-field-unfilled">
+                <option value="" disabled selected hidden>Make Selection</option>
+                <option value="TRK001">GEN001</option>
+                <option value="TRK002">GEN002</option>      
+                <option value="TRK003">AC003</option>
+                <option value="TRK004">FL004</option>
+            </select>
+            <br><br>
+
+            <label for="loaded_equipment_id3">Equipment 3 ID :</label>
+            <select id="loaded_equipment_id3" name="loaded_equipment_id3" required class="input-field-unfilled">
+                <option value="" disabled selected hidden>Make Selection</option>
+                <option value="TRK001">GEN001</option>
+                <option value="TRK002">GEN002</option>      
+                <option value="TRK003">AC003</option>
+                <option value="TRK004">FL004</option>
+            </select>
+            <br><br>
+                       
+        </fieldset>
+
+<!-- Location Information -->
+        <fieldset>
+            <legend>Delivery Location Information</legend>
+
+            <label for="location_name">Location Name:</label>
+                <input type="text" placeholder="E.g., Johnson County EOC" id="location_name" name="location_name" required class="input-field-unfilled">
+            <br><br>
+
+            <label for="delivery_address">Delivery Address:</label>
+                <input type="text" id="delivery_address" name="delivery_address" required class="input-field-unfilled">
+            <br><br>
+
+            <label for="delivery_city">Delivery City:</label><br>
+                <select id="delivery_city" name="delivery_city" required class="input-field-unfilled">
+                    <option value="" disabled selected hidden>Make Selection</option>
+                    <option value="tampa">Tampa</option>
+                    <option value="orlando">Orlando</option>
+                    <option value="williston">Williston</option>
+                    <option value="gainsville">Gainsville</option>               
+                    <option value="Other">Other</option>
+                </select>
+                <br><br>
+
+            <label for="delivery_state">Delivery State:</label>
+                <select id="delivery_state" name="delivery_state" required class="input-field-unfilled">
+                    <option value="" disabled selected hidden>Make Selection</option>
+                    <option value="tampa">KY</option>
+                    <option value="orlando">FL</option>
+                    <option value="williston">GA</option>
+                    <option value="gainsville">AL</option>               
+                    <option value="Other">Other</option>
+                </select>
+                <br><br>
+
+            <label for="delivery_zip">Delivery Zip Code:</label>
+                <input type="number" id="delivery_zip" name="delivery_zip" min="1" required class="input-field-unfilled">
+                <br><br>
+
+            <label for="distance_from_lsa">Distance From LSA:</label>
+                <input type="number" id="distance_from_lsa" name="distance_from_lsa" placeholder="miles" required class="input-field-unfilled">
+                <br><br>
+
+            <label for="different_delivery_address">Delivery Address Change:</label><br>
+            <input type="checkbox" id="different_delivery_address" name="different_delivery_address" value="different_delivery_address"> Delivery Address is Different From Displayed Address
+            <br><br>
+        </fieldset>
+
+<!-- POC Information -->
+        <fieldset style="background-color: rgb(241, 240, 245);">
+            <legend>POC Information</legend>
+
+            <label for="poc_name">POC Name:</label>
+            <input type="text" id="poc_name" name="poc_name" required class="input-field-unfilled">
+            <br><br>
+
+            <label for="poc_phone">POC Phone:</label>
+            <!--Validate with regex-->
+            <input type="text" placeholder="(###) ###-####" title="please enter a valid phone number" id="poc_phone" name="poc_phone" required class="input-field-unfilled">
+            <br><br>
+
+            <hr><br>
+
+            <label for="alt_poc_name">Alt POC Name:</label>
+            <input type="text" id="alt_poc_name" name="alt_poc_name" required class="input-field-unfilled">
+            <br><br>
+
+            <label for="alt_poc_phone">Alt POC Phone:</label>
+            <!--Validate with regex-->
+            <input type="text" placeholder="(###) ###-####" title="please enter a valid phone number" id="alt_poc_phone" name="alt_poc_phone" required class="input-field-unfilled">
+            <br><br>               
+        </fieldset>
+
+<!-- On Scene Information -->
+        <fieldset>
+            <legend>On Scene Information</legend>
+
+            <label for="delivery_date">Preferred Delivery Date:</label>
+            <input type="date" id="delivery_date" name="delivery_date" required class="input-field-unfilled">
+            <br><br>
+
+            <label for="delivery_time">Delivery Time:</label>
+            <input tag="short-field" type="time" id="delivery_time" name="delivery_time" required class="input-field-unfilled">
+            <br><br>
+
+            <label for="equipment_required">Equipment Required:</label>
+            <select id="equipment_required" name="equipment_required" required class="input-field-unfilled">
+                <option value="" disabled selected hidden>Make Selection</option>
+                <option value="generator">Generator</option>
+                <option value="generator cables">Generator Cables</option>      
+                <option value="hvac system">HVAC System</option>
+                <option value="hvac ducts">HVAC Ducts</option>
+            </select>
+            <br><br>
+
+            <label for="personnel_required">Personnel Required:</label>
+            <select id="personnel_required" name="personnel_required" required class="input-field-unfilled">
+                <option value="" disabled selected hidden>Make Selection</option>
+                <option value="electrician">Electrician</option>
+                <option value="equipment operator">Equipment Operator</option>
+                <option value="mechanic">Mechanic</option>
+                <option value="laborers">Laborers</option>
+
+            </select>
+            <br><br>
+
+            <label for="personnel_required">Information for the driver</label>
+            <select id="personnel_required" name="personnel_required" required class="input-field-unfilled">
+                <option value="" disabled selected hidden>Make Selection</option>
+                <option value="locked gate - key">Locked Gate (key)</option>
+                <option value="locked gate - code">Locked Gate (code)</option>
+                <option value="debris in road">Debris/Sand in Road</option>
+                <option value="possible detours">Possible Detours</option>
+                <option value="forklift on scene">Forklift on Scene</option>
+                <option value="loading dock or ramp">Loading Dock/Ramp on Scene</option>
+                <option value="availble M-F, 9-5 only">Only Availble M-F, 9-5</option>                
+                </select>
+                <br><br>
+
+                <label for="driver_notes">Notes for Driver:</label><br>
+                <textarea placeholder="What else does the driver need to know to make the pickup/delivery as easy as possible?" id="driver_notes" name="driver_notes" rows="4" required class="input-field-unfilled"></textarea><br><br>                      
+        </fieldset>
+
+        <!-- Submit Button -->
+        <div class="formSubmitButton">
+            Finalize BOL
+        </div>
+    </form>
+
+</body>
+</html>
